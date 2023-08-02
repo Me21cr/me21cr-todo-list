@@ -30,9 +30,9 @@ const Home = () => {
 
 	return (
 		<>  <h1>Todos</h1>
-			<div class="paper">
+			<div className="paper "> 
 					<ul>
-						<input className="texto" placeholder="What needs to be done"
+						<input className="texto no-border"style={{width: "50rem"}} placeholder="What needs to be done"
 								onKeyUp={
 									(e) => { handleInput(e) }
 								} />
@@ -40,10 +40,11 @@ const Home = () => {
 							lista && lista.length > 0 ?
 								<>{
 									lista.map((item, index) => {
-										return <li key={index}>
+										return <li className="d-flex bd-highlight" key={index}>
 
-											{item}
-											<button className="boton" type="button" onClick={e => { deleteTask(index) }}>
+											<p className="p-2 w-100 bd-highlight">{item}</p> 
+											
+											<button className="boton p-2 flex-shrink-1 bd-highlight no-border" type="button" onClick={e => { deleteTask(index) }}>
 											X
 											</button>
 										</li>
